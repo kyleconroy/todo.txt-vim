@@ -115,28 +115,21 @@ endfunction
 command! -nargs=? TodoDone :call <SID>TodoDone(<f-args>)
 
 " Add a tag
-map  [t   $:CopyTag<CR>
-vmap [t   $:CopyTag<CR>
+map  <LocalLeader>t   $:CopyTag<CR>
 
 " Mark a task as done
-map  [d   :TodoDone<CR>
-vmap [d   :TodoDone<CR>
+map  <LocalLeader>d   :TodoDone<CR>
 
-map  [j   $:CopyTag<CR>:CopyDate<CR>:TodoDone<CR>
-vmap [j   $:CopyTag<CR>:CopyDate<CR>::TodoDone<CR>
+map  <LocalLeader>j   $:CopyTag<CR>:CopyDate<CR>:TodoDone<CR>
 
 " Clear away indented done lines
-map  [c   :set lazyredraw<CR>kmrj/^\s\+x <CR>ddGp:s/^\s\+//<CR>'r:nohlsearch<CR>
+map  <LocalLeader>c   :set lazyredraw<CR>kmrj/^\s\+x <CR>ddGp:s/^\s\+//<CR>'r:nohlsearch<CR>
 
 " Other macros
-map  [w   :DueDate 7<CR>
-vmap [w   :DueDate 7<CR>
-map  [m   :DueDate 30<CR>
-vmap [m   :DueDate 30<CR>
-map  [s   :%IndentSort<CR>
-vmap [s   :%IndentSort<CR>
-map  [r   zRmr:%RecursiveIndentSort<CR>'r
-vmap [r   zRmr:%RecursiveIndentSort<CR>'r
+map  <LocalLeader>w   :DueDate 7<CR>
+map  <LocalLeader>m   :DueDate 30<CR>
+map  <LocalLeader>s   :%IndentSort<CR>
+map  <LocalLeader>r   zRmr:%RecursiveIndentSort<CR>'r
 
 " abbreviations
 " can put these in .vimrc if useful for other file types
