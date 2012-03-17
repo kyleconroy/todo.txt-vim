@@ -114,6 +114,16 @@ endfunction
 
 command! -nargs=? TodoDone :call <SID>TodoDone(<f-args>)
 
+function! s:TodoArchive(...)
+    execute "w"
+    execute "!todo.sh archive"
+endfunction                                   
+
+command! -nargs=0 TodoArchive :call <SID>TodoArchive()
+
+" Archive Tasks
+map  <LocalLeader>a   :TodoArchive<CR>
+
 " Add a tag
 map  <LocalLeader>t   $:CopyTag<CR>
 
