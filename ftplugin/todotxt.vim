@@ -116,7 +116,7 @@ command! -nargs=? TodoDone :call <SID>TodoDone(<f-args>)
 
 function! s:TodoArchive(...)
     execute "w"
-    execute "!todo.sh archive"
+    execute "silent !todo.sh archive"
 endfunction                                   
 
 command! -nargs=0 TodoArchive :call <SID>TodoArchive()
